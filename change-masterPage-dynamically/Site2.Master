@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site2.master.cs" Inherits="change_masterPage_dynamically.Site2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style>
+        header {
+            background-color: lightseagreen;
+            color: white;
+            padding: 12px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: lightseagreen;
+            color: white;
+            padding: 12px;
+            margin-top: 360px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <h1>User</h1>
+            <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                <asp:ListItem Text="Master Page 1" Value="~/Site1.Master"></asp:ListItem>
+                <asp:ListItem Text="Master Page 2" Value="~/Site2.Master"></asp:ListItem>
+            </asp:DropDownList>
+        </header>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <footer>
+            <h3>@copyright 2017</h3>
+        </footer>
+    </form>
+</body>
+</html>
